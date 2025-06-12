@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="kk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDRIS & NURAIYM - ҮЙЛЕНУ ТОЙЫ</title>
+    <!-- Мета-описание для SEO, переведено на кинематографический казахский -->
+    <meta name="description" content="МАХАББАТ ХИКАЯСЫ: IDRIS & NURAIYM. Бұл - ерекше бағдарлама, салтанатты мекенжай және есте қаларлық сәттерге шақыру.">
+    <!-- Open Graph мета-теги для социальных сетей, переведены на кинематографический казахский -->
+    <meta property="og:title" content="IDRIS & NURAIYM - ҮЙЛЕНУ ТОЙЫ">
+    <meta property="og:description" content="Идрис пен Нурайымның махаббат хикаясының жаңа тарауы ашылуда. Осы ерекше күнімізді бізбен бірге тойлаңыз!">
+    <!-- Использование предоставленного изображения для OG, убедитесь, что оно имеет подходящее соотношение сторон для социальных сетей -->
+    <meta property="og:image" content="clKMZMS9gt63Hak9C6JbCKhuSdM6uXNj9uoKzblN.jpg"> 
+    <meta property="og:url" content="ВАШ_URL_САЙТА_ЗДЕСЬ">
+    <meta property="og:type" content="website">
+
+    <!-- CDN Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS для анимаций при прокрутке -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts для кинематографической типографики -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Обновленные шрифты: Oswald (заголовки), Great Vibes (рукописный), Comfortaa (текст) -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Great+Vibes&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- GSAP и SplitText CDN для анимации имен -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
+    <!-- Скрипт AOS загружается до вызова AOS.init() -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        /* Пользовательские CSS-переменные на основе строгой цветовой палитры */
+        :root {
+            --color-red: #C8102E;     /* Насыщенный красный для действия */
+            --color-black: #0A0A0A;   /* Глубокий кинематографический черный */
+            --color-cream: #FDF3E7;   /* Элегантный теплый белый */
+            --color-deep-red-accent: #8B0000; /* Более глубокий, насыщенный красный для акцентов */
+        }
+
+        /* Базовый сброс border-radius для обеспечения острых углов у всех элементов */
+        *, *::before, *::after {
+            border-radius: 0 !important; /* Сохраняем острые углы для винтажного стиля */
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Comfortaa', sans-serif; /* Основной читаемый шрифт Comfortaa */
+            color: var(--color-cream); /* Цвет текста по умолчанию */
+            background-color: var(--color-black); /* Фон по умолчанию */
+            overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+            line-height: 1.8; /* Увеличено межстрочное расстояние для читаемости */
+            letter-spacing: 0.02em; /* Немного уменьшено межбуквенное расстояние для элегантности */
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Стиль для предотвращения прокрутки body при открытых модальных окнах */
+        body.modal-open {
+            overflow: hidden; /* Отключает прокрутку body */
+            padding-right: 8px; /* Компенсирует исчезновение полосы прокрутки */
+        }
+
+        /* Пользовательские классы шрифтов */
+        .font-oswald {
+            font-family: 'Oswald', sans-serif; /* Заголовочный шрифт Oswald */
+        }
+        
+        .font-great-vibes {
+            font-family: 'Great Vibes', cursive; /* Рукописный шрифт Great Vibes */
+        }
+
+        .font-comfortaa {
+            font-family: 'Comfortaa', sans-serif; /* Текстовый шрифт Comfortaa */
+        }
+
+        /* Пользовательские тени текста для кинематографического ощущения */
+        .drop-shadow-lg {
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        .drop-shadow-md {
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Эффекты зернистости плаката и виньетки - применяются к основному контейнеру */
+        .poster-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+            opacity: 0.03; /* Очень тонкая зернистость */
+            filter: grayscale(100%);
+            pointer-events: none; /* Разрешает клики/взаимодействия проходить сквозь */
+            z-index: 10;
+        }
+
+        /* Наложение виньетки: радиальный градиент для затемнения краев, фокусирующий контент */
+        .poster-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.8) 75%);
+            pointer-events: none; /* Разрешает клики/взаимодействия проходить сквозь */
+            z-index: 10;
+        }
+
+        /* Уточненные угловые разделители секций с темно-красными акцентами и белым текстом */
+        .section-divider-angled {
+            position: relative;
+            height: 80px;
+            background-color: var(--color-black);
+            margin: 0 auto;
+            width: 100%;
+            z-index: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 2px solid var(--color-deep-red-accent);
+            border-bottom: 2px solid var(--color-deep-red-accent);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Добавлена тонкая тень */
+        }
+        .section-divider-angled::before,
+        .section-divider-angled::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-deep-red-accent);
+            z-index: -1;
+        }
+        .section-divider-angled.top-angled::before {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+            top: 0;
+            left: 0;
+        }
+        .section-divider-angled.bottom-angled::before {
+            clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+            top: 0;
+            left: 0;
+        }
+        .section-divider-angled .divider-text {
+            font-family: 'Oswald', sans-serif;
+            color: var(--color-cream); /* Белый цвет текста */
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 5px rgba(0,0,0,0.6); /* Мягкая тень текста */
+            opacity: 0.9;
+        }
+
+        /* Фоновые секции с улучшенной яркостью и мягкими тенями */
+        .section-background {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            color: var(--color-cream);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6); /* Мягче тень текста */
+            padding: 10rem 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: grayscale(20%) brightness(1.15); /* Уменьшена интенсивность обесцвечивания и увеличена яркость */
+        }
+        .section-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0,0,0,0.35); /* Уменьшена непрозрачность для большей яркости фонов */
+            z-index: 0;
+        }
+        .section-content {
+            position: relative;
+            z-index: 1;
+            padding: 2.5rem;
+            max-width: 90%;
+            background-color: rgba(10,10,10,0.3); /* Уменьшена непрозрачность для большей яркости */
+            backdrop-filter: blur(3px); /* Меньше размытия */
+            border: 2px solid var(--color-deep-red-accent); /* Чуть тоньше рамка */
+            box-shadow: 0 0 20px rgba(0,0,0,0.4), inset 0 0 10px rgba(0,0,0,0.3); /* Более мягкая внешняя тень, добавлена тонкая внутренняя тень */
+        }
+
+        /* Пользовательская полоса прокрутки */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-black);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-red); /* Основной красный для полосы прокрутки */
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-deep-red-accent);
+        }
+
+        /* Начальное состояние AOS перед анимацией */
+        [data-aos] {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-property: opacity, transform;
+            transition-duration: 1s;
+            transition-timing-function: ease-out;
+        }
+        [data-aos="fade-in-up-aos"].aos-init {
+            opacity: 0;
+            transform: translateY(40px); /* Меньше сдвиг */
+        }
+        [data-aos="zoom-in-aos"].aos-init {
+            opacity: 0;
+            transform: scale(0.95); /* Меньше зум */
+        }
+        [data-aos].aos-animate {
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
+
+        /* Общие стили для couple-logo - GSAP будет управлять анимацией */
+        .couple-logo {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 0.8;
+            letter-spacing: 0.12em;
+            color: var(--color-cream);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 0.2em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Мягче тень */
+            overflow: hidden;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .couple-logo .char, .couple-logo .word {
+            opacity: 0;
+        }
+        .couple-logo .ampersand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.5em;
+            color: var(--color-deep-red-accent);
+            display: inline-block;
+            margin: 0 0.1em;
+            vertical-align: middle;
+        }
+        .couple-logo .name-part {
+            font-family: 'Great Vibes', cursive;
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+
+        /* Анимация таймера обратного отсчета */
+        .countdown-digit-wrapper {
+            background-color: rgba(10, 10, 10, 0.6); /* Чуть светлее */
+            border: 2px solid var(--color-deep-red-accent);
+            box-shadow: none; /* Убрана тень */
+            padding: 1.5rem 1rem;
+            transition: transform 0.2s ease-in-out;
+            position: relative; /* Для декоративных элементов */
+            overflow: hidden;
+        }
+        .countdown-digit-wrapper:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* Мягкая тень при наведении */
+        }
+        /* Декоративные уголки для цифр таймера */
+        .countdown-digit-wrapper::before,
+        .countdown-digit-wrapper::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 1px solid var(--color-red);
+            opacity: 0.7;
+        }
+        .countdown-digit-wrapper::before {
+            top: -1px;
+            left: -1px;
+            border-right: none;
+            border-bottom: none;
+        }
+        .countdown-digit-wrapper::after {
+            bottom: -1px;
+            right: -1px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .countdown-digit {
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+            display: inline-block;
+            color: var(--color-cream);
+            text-shadow: 0 0 8px rgba(255,255,255,0.4); /* Мягче свечение */
+            font-family: 'Oswald', sans-serif;
+        }
+        .countdown-label {
+            color: var(--color-red);
+            font-weight: 500;
+            margin-top: 0.5rem;
+            font-size: 1em;
+            letter-spacing: 0.04em;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+        .countdown-digit.animate-flip {
+            animation: flip-in 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+        @keyframes flip-in {
+            0% { transform: rotateX(-90deg) scale(0.8); opacity: 0; }
+            100% { transform: rotateX(0deg) scale(1); opacity: 1; }
+        }
+
+        /* Стиль логотипа 2GIS */
+        .2gis-logo-container {
+            transition: transform 0.2s ease-in-out;
+            background-color: var(--color-black);
+            border: 2px solid var(--color-red);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Мягкая тень */
+        }
+        .2gis-logo-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5); /* Усиленная мягкая тень при наведении */
+        }
+
+        /* Стиль кнопок и полей ввода (винтаж/печать) */
+        button {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Единая мягкая тень для всех кнопок */
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        button:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Чуть сильнее тень при наведении */
+            transform: translateY(-2px);
+        }
+        /* Главная RSVP кнопка - более выразительная */
+        .rsvp-main-button {
+            background-color: var(--color-red);
+            color: var(--color-cream);
+            padding: 1.2rem 3rem;
+            font-size: 1.8rem;
+            border: 4px solid var(--color-cream);
+            box-shadow: 0 0 15px rgba(200, 16, 46, 0.5), 0 0 30px rgba(200, 16, 46, 0.25); /* Мягче свечение */
+        }
+        .rsvp-main-button:hover {
+            background-color: var(--color-deep-red-accent);
+            color: var(--color-cream);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(200, 16, 46, 0.7), 0 0 50px rgba(200, 16, 46, 0.4); /* Усиленное, но мягкое свечение */
+        }
+        /* Кнопка "Тілек жасау" - стилизация под второстепенную, но пропорциональную */
+        .rsvp-secondary-button {
+            background-color: var(--color-deep-red-accent);
+            color: var(--color-cream);
+            padding: 1rem 2.5rem; /* Увеличен padding для лучшей пропорциональности */
+            font-size: 1.3rem; /* Увеличен размер шрифта для лучшей пропорциональности */
+            border: 2px solid var(--color-red);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        .rsvp-secondary-button:hover {
+            background-color: var(--color-red);
+            color: var(--color-cream);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+
+        input[type="text"], textarea, select {
+            background-color: var(--color-black);
+            border: 2px solid var(--color-deep-red-accent);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); /* Мягкая внутренняя тень */
+            transition: all 0.2s ease-in-out;
+            color: var(--color-cream);
+            font-family: 'Comfortaa', sans-serif;
+        }
+        input[type="radio"] {
+            border: 2px solid var(--color-deep-red-accent);
+            background-color: var(--color-black);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            position: relative;
+            cursor: pointer;
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            min-height: 22px;
+            transition: all 0.2s ease-in-out;
+        }
+        input[type="radio"]:checked {
+            background-color: var(--color-deep-red-accent);
+            border-color: var(--color-deep-red-accent);
+        }
+        input[type="radio"]:checked:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background-color: var(--color-black);
+        }
+        input[type="text"]:focus, textarea:focus, select:focus {
+            background-color: var(--color-black);
+            box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.4); /* Более мягкое свечение */
+            border-color: var(--color-red);
+        }
+
+        /* Стиль модальных окон */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Чуть светлее наложение */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: var(--color-black);
+            padding: 3rem;
+            border: 2px solid var(--color-deep-red-accent);
+            box-shadow: 0 0 40px rgba(0,0,0,0.6); /* Мягче тень */
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            transform: translateY(-20px); /* Меньше сдвиг */
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .modal.open .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2.2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--color-red);
+            padding: 0.5rem;
+            line-height: 1;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .modal-close:hover {
+            transform: rotate(90deg) scale(1.1);
+            color: var(--color-deep-red-accent);
+        }
+        /* Стиль лоадера */
+        .loader {
+            border: 4px solid var(--color-cream);
+            border-top: 4px solid var(--color-red);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Адаптивные настройки для мобильных устройств */
+        @media (max-width: 768px) {
+            body {
+                line-height: 1.6;
+                letter-spacing: 0.01em;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                letter-spacing: 0.03em;
+                text-shadow: none;
+            }
+
+            .section-divider-angled {
+                height: 60px;
+                border-width: 1px;
+            }
+            .section-divider-angled .divider-text {
+                font-size: 1.2rem;
+            }
+
+            .section-background {
+                padding: 6rem 0;
+            }
+            .section-overlay {
+                background-color: rgba(0,0,0,0.75); /* Чуть больше затемнения на мобильных для читаемости */
+            }
+            .section-content {
+                padding: 1.5rem;
+                backdrop-filter: blur(2px);
+                border-width: 1px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.3), inset 0 0 5px rgba(0,0,0,0.2);
+            }
+
+            .nav-link {
+                margin: 0.2rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .couple-logo {
+                font-size: 3.5rem;
+                letter-spacing: 0.08em;
+                margin-bottom: 1rem;
+                padding-bottom: 0.4em;
+                text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+            }
+            .couple-logo .ampersand {
+                font-size: 0.4em;
+            }
+            .couple-logo .name-part {
+                font-size: 1em;
+            }
+
+            .text-xl.md\:text-3xl { font-size: 1.2rem; }
+            .text-lg.md\:text-2xl { font-size: 1.1rem; }
+            .text-2xl.md\:text-4xl { font-size: 1.6rem; }
+
+            .countdown-digit-wrapper {
+                padding: 0.75rem 0.4rem;
+                border-width: 1px;
+            }
+            .countdown-digit {
+                font-size: 2.5rem;
+            }
+            .countdown-label {
+                font-size: 0.9rem;
+                margin-top: 0.25rem;
+            }
+            .modal-content {
+                padding: 1.5rem;
+            }
+            .modal-close {
+                font-size: 1.4rem;
+                top: 0.75rem;
+                right: 0.75rem;
+            }
+            .text-lg.font-medium {
+                font-size: 0.95rem;
+            }
+            button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            .rsvp-main-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1.2rem;
+                border-width: 2px;
+            }
+            .rsvp-secondary-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            input[type="text"], textarea, select {
+                font-size: 0.9rem;
+                padding: 0.7rem;
+            }
+            input[type="radio"] {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+                min-height: 18px;
+            }
+            input[type="radio"]:checked:after {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .couple-logo {
+                font-size: 2.8rem;
+                letter-spacing: 0.05em;
+                margin-bottom: 0.75rem;
+            }
+            .couple-logo .ampersand {
+                font-size: 0.38em;
+            }
+            .text-xl.md\:text-3xl { font-size: 1.1rem; }
+            .text-lg.md\:text-2xl { font-size: 1.0rem; }
+            .text-2xl.md\:text-4xl { font-size: 1.4rem; }
+
+            .countdown-digit {
+                font-size: 2rem;
+            }
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+            .nav-link {
+                font-size: 0.75rem;
+                margin: 0.1rem 0.2rem;
+            }
+            .section-divider-angled {
+                height: 50px;
+            }
+            .section-divider-angled .divider-text {
+                font-size: 0.9rem;
+            }
+            .modal-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black-cinematic text-cream-elegant">
+    <audio id="background-music" loop>
+        <source src="MP3.mp3" type="audio/mp3">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+
+    <div class="fixed bottom-4 right-4 z-50">
+        <button id="music-toggle" class="bg-red-action text-cream-elegant p-3 shadow-lg hover:bg-deep-red-accent transition duration-300 transform hover:scale-110">
+            <i class="fas fa-play" id="music-icon"></i>
+        </button>
+    </div>
+
+    <div id="custom-alert" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black-cinematic p-6 shadow-xl border-2 border-deep-red-accent z-50 text-center hidden" style="min-width: 280px;">
+        <p id="alert-message" class="text-lg text-cream-elegant mb-4"></p>
+        <button id="alert-close" class="bg-red-action text-cream-elegant px-6 py-2 hover:bg-deep-red-accent transition duration-300">Жабу</button>
+    </div>
+
+    <header class="bg-black-cinematic shadow-md py-4 sticky top-0 z-40 border-b-2 border-deep-red-accent">
+        <nav class="container mx-auto flex justify-center items-center flex-wrap px-4">
+            <a href="#invitation" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Шақыру</a>
+            <a href="#ceremony" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Той салтанаты</a>
+            <a href="#program" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Той бағдарламасы</a>
+            <a href="#venue" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Мекенжай</a>
+            <a href="#hosts" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Той иелері</a>
+            <a href="#love-story-section" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Махаббат хикаясы ✨</a>
+            <a href="#memories" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Естеліктер</a>
+            <a href="#rsvp" class="nav-link mx-3 my-2 text-lg font-comfortaa text-cream-elegant hover:text-red-action transition duration-300 uppercase tracking-wider">Келуді растау</a>
+        </nav>
+    </header>
+
+    <div class="poster-container">
+        <section id="invitation" class="relative section-background min-h-screen text-center px-4"
+            style="background-image: url('clKMZMS9gt63Hak9C6JbCKhuSdM6uXNj9uoKzblN.jpg');">
+            <div class="section-overlay"></div>
+            <div class="section-content relative z-10 max-w-4xl mx-auto stagger-fade-in">
+                <h1 class="couple-logo mb-4">
+                    <span class="name-part" id="name-idris">Idris</span><span class="ampersand">&</span><span class="name-part" id="name-nuraim">Nuraiym</span>
+                </h1>
+
+                <p class="hero-subtitle text-2xl md:text-4xl text-cream-elegant mb-4 font-oswald uppercase tracking-widest drop-shadow-md" data-aos="fade-in-up-aos" data-aos-delay="1200">
+                    БІРГЕ МӘҢГІЛІККЕ
+                </p>
+                <p class="hero-details text-xl md:text-3xl text-red-action mb-8 font-comfortaa uppercase tracking-wider drop-shadow-md" data-aos="fade-in-up-aos" data-aos-delay="1500">
+                    11.07.2025 | ДУЛАТ
+                </p>
+
+                <p class="text-6xl md:text-8xl text-red-action mb-6 font-oswald uppercase leading-none drop-shadow-lg" data-aos="fade-in-up-aos" data-aos-delay="1800">
+                    ҮЙЛЕНУ ТОЙЫ
+                </p>
+                <p class="text-xl md:text-3xl text-cream-elegant mb-8 font-comfortaa leading-relaxed" data-aos="fade-in-up-aos" data-aos-delay="2100">
+                    Сіздерді біздің ерекше тойымыздың салтанатты ашылуына шақырамыз!<br>
+                    Бұл махаббат пен қуаныштың оқиғасына куә болыңыз.
+                </p>
+            </div>
+            <a href="#program" class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 text-deep-red-accent text-4xl" aria-label="Прокрутить вниз">
+                &darr;
+            </a>
+        </section>
+
+        <div class="section-divider-angled top-angled">
+            <span class="divider-text">Той бағдарламасы</span>
+        </div>
+
+        <section id="ceremony" class="relative section-background min-h-screen flex items-center justify-center text-center px-4"
+            style="background-image: url('7828e702e8bc8ac3a45d110ca5872ecf.jpg');">
+            <div class="section-overlay"></div>
+            <div class="section-content relative z-10 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-oswald text-red-action uppercase mb-8 drop-shadow-lg" data-aos="fade-in-up-aos">Той салтанаты</h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-6 text-cream-elegant font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="200">
+                    Құрметті қонақтар! Махаббаттың салтанатты сәті – біздің үйлену тойымызға қош келдіңіздер. Осы маңызды басталған қадамды бірге атап өтуге шақырамыз.
+                </p>
+                <p class="text-lg md:text-xl leading-relaxed text-cream-elegant font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="300">
+                    Той рәсімі "Дулат" мейрамханасында өтеді.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center mt-8" data-aos="fade-in-up-aos" data-aos-delay="400">
+                    <div class="flex items-center text-cream-elegant mb-4 md:mb-0 md:mr-8">
+                        <i class="fas fa-calendar-alt text-2xl mr-3 text-deep-red-accent"></i>
+                        <span class="text-xl font-comfortaa">2025 жыл 11 шілде</span>
+                    </div>
+                    <div class="flex items-center text-cream-elegant">
+                        <i class="fas fa-clock text-2xl mr-3 text-deep-red-accent"></i>
+                        <span class="text-xl font-comfortaa">Сағат 18:00</span>
+                    </div>
+                </div>
+                <button id="love-story-generator-trigger-ceremony"
+                        class="bg-red-action text-cream-elegant px-8 py-3 hover:bg-deep-red-accent transition duration-300 text-base font-oswald uppercase tracking-wide transform hover:scale-105 mt-8" data-aos="fade-in-up-aos" data-aos-delay="500">
+                    ✨ МАХАББАТ ХИКАЯСЫН БАЯНДАУ
+                </button>
+            </div>
+        </section>
+
+        <div class="section-divider-angled bottom-angled">
+            <span class="divider-text">Бағдарлама жалғасуда</span>
+        </div>
+
+        <section id="program" class="py-16 md:py-24 bg-black-cinematic px-4">
+            <div class="container mx-auto text-center max-w-4xl">
+                <h2 class="text-3xl md:text-5xl font-oswald text-deep-red-accent uppercase mb-12 drop-shadow-lg" data-aos="fade-in-up-aos">Той бағдарламасы</h2>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-black-cinematic p-6 border-2 border-deep-red-accent transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos">
+                        <h3 class="text-2xl font-oswald text-red-action uppercase mb-3">17:45 - Қонақтарды қарсы алу</h3>
+                        <p class="text-cream-elegant font-comfortaa">Құрметті қонақтарды мейрамханаға қарсы аламыз.</p>
+                    </div>
+                    <div class="bg-black-cinematic p-6 border-2 border-deep-red-accent transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="100">
+                        <h3 class="text-2xl font-oswald text-red-action uppercase mb-3">18:00 - Негізгі рәсімнің басталуы</h3>
+                        <p class="text-cream-elegant font-comfortaa">Жас жұбайлардың салтанатты кіріп келуі және құттықтау сөздері.</p>
+                    </div>
+                    <div class="bg-black-cinematic p-6 border-2 border-deep-red-accent transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="200">
+                        <h3 class="text-2xl font-oswald text-red-action uppercase mb-3">19:00 - Беташар</h3>
+                        <p class="text-cream-elegant font-comfortaa">Қазақ халқының салт-дәстүрі бойынша келіннің бетін ашу рәсімі.</p>
+                    </div>
+                    <div class="bg-black-cinematic p-6 border-2 border-deep-red-accent transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="300">
+                        <h3 class="text-2xl font-oswald text-red-action uppercase mb-3">20:00 - Ас мәзірі және ойын-сауық</h3>
+                        <p class="text-cream-elegant font-comfortaa">Дәмді тағамдар ұсынылып, өнерлі әртістердің мерекелік бағдарламасы басталады.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-angled top-angled">
+            <span class="divider-text">Орын мен уақыт</span>
+        </div>
+
+        <section id="venue" class="py-16 md:py-24 bg-cream-elegant px-4">
+            <div class="container mx-auto text-center max-w-4xl">
+                <h2 class="text-3xl md:text-5xl font-oswald text-black-cinematic uppercase mb-8 drop-shadow-md" data-aos="fade-in-up-aos">Мекенжай</h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-6 text-black-cinematic font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="100">
+                    Той салтанаты мына мекенжайда өтеді:
+                </p>
+                <p class="text-xl md:text-2xl font-comfortaa font-semibold mb-8 text-red-action uppercase drop-shadow-sm" data-aos="fade-in-up-aos" data-aos-delay="200">
+                    Ақтөбе қаласы, "Дулат" мейрамханасы
+                </p>
+
+                <a href="https://2gis.kz/aktobe/firm/70000001032565084" target="_blank" class="block w-full h-80 md:h-96 overflow-hidden border-2 border-deep-red-accent group flex items-center justify-center bg-black-cinematic" data-aos="zoom-in-aos" data-aos-delay="300">
+                    <img src="images.png"
+                        alt="2GIS картасына сілтеме"
+                        class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain p-4 transition duration-300 group-hover:scale-105"
+                        onerror="this.onerror=null;this.src='https://placehold.co/320x320/0A0A0A/FDF3E7?text=2GIS%20Карта%0AБасу%20үшін';">
+                </a>
+                <p class="text-sm text-black-cinematic font-comfortaa mt-4" data-aos="fade-in-up-aos" data-aos-delay="400">
+                    Картаны ашу үшін басыңыз (2GIS)
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider-angled bottom-angled">
+            <span class="divider-text">Той иелері</span>
+        </div>
+
+        <section id="hosts" class="py-16 md:py-24 bg-black-cinematic px-4">
+            <div class="container mx-auto text-center max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-oswald text-deep-red-accent uppercase mb-8 drop-shadow-lg" data-aos="fade-in-up-aos">Той иелері</h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-8 text-cream-elegant font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="100">
+                    Осы салтанатты кештің қонақжай иелері және басты ұйымдастырушылары:
+                </p>
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+                    <!-- Убедимся, что блоки имеют одинаковую ширину -->
+                    <div class="bg-black-cinematic p-6 border-2 border-deep-red-accent flex-1 transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="200">
+                        <p class="text-2xl font-oswald text-red-action uppercase mb-2">РУСЛАН</p>
+                    </div>
+                    <div class="bg-black-cinematic p-6 border-2 border-deep-red-accent flex-1 transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="300">
+                        <p class="text-2xl font-oswald text-red-action uppercase mb-2">АЙТАЛАН</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-angled top-angled">
+            <span class="divider-text">Тойға дейін</span>
+        </div>
+
+        <section class="relative section-background min-h-screen flex items-center justify-center text-center px-4"
+            style="background-image: url('hNuhZLFJDZvRe4Px6kfaN6Y3N9rhS7M1Z5jwY2Zg.jpg');">
+            <div class="section-overlay"></div>
+            <div class="section-content relative z-10 p-8 bg-black-cinematic bg-opacity-70 backdrop-blur-sm shadow-2xl max-w-3xl mx-auto border-2 border-deep-red-accent">
+                <h2 class="text-3xl md:text-5xl font-oswald text-red-action uppercase mb-8 drop-shadow-lg" data-aos="fade-in-up-aos">Тойға дейін қалды</h2>
+                <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-8 text-cream-elegant">
+                    <div class="flex flex-col items-center countdown-digit-wrapper transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos">
+                        <span id="days" class="text-5xl md:text-7xl countdown-digit">00</span>
+                        <span class="text-lg md:text-xl countdown-label">КҮН</span>
+                    </div>
+                    <div class="flex flex-col items-center countdown-digit-wrapper transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="100">
+                        <span id="hours" class="text-5xl md:text-7xl countdown-digit">00</span>
+                        <span class="text-lg md:text-xl countdown-label">САҒАТ</span>
+                    </div>
+                    <div class="flex flex-col items-center countdown-digit-wrapper transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="200">
+                        <span id="minutes" class="text-5xl md:text-7xl countdown-digit">00</span>
+                        <span class="text-lg md:text-xl countdown-label">МИНУТ</span>
+                    </div>
+                    <div class="flex flex-col items-center countdown-digit-wrapper transform hover:scale-105 transition duration-300" data-aos="fade-in-up-aos" data-aos-delay="300">
+                        <span id="seconds" class="text-5xl md:text-7xl countdown-digit">00</span>
+                        <span class="text-lg md:text-xl countdown-label">СЕКУНД</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-angled bottom-angled">
+            <span class="divider-text">Махаббат оқиғасы</span>
+        </div>
+
+        <section id="love-story-section" class="py-16 md:py-24 bg-cream-elegant px-4">
+            <div class="container mx-auto text-center max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-oswald text-black-cinematic uppercase mb-8 drop-shadow-md" data-aos="fade-in-up-aos">Махаббат хикаясы</h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-8 text-black-cinematic font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="100">
+                    Идрис пен Нурайымның махаббат хикаясы – бұл біздің бірге өткен әрбір сәтіміздің көрінісі. Сіз осы хикаяны өзіңіздің кілт сөздеріңізбен толықтыра аласыз!
+                </p>
+                <button id="love-story-generator-trigger"
+                        class="bg-red-action text-cream-elegant px-8 py-3 hover:bg-deep-red-accent transition duration-300 text-base font-oswald uppercase tracking-wide transform hover:scale-105" data-aos="fade-in-up-aos" data-aos-delay="200">
+                    ✨ МАХАББАТ ХИКАЯСЫН БАЯНДАУ
+                </button>
+            </div>
+        </section>
+
+        <div class="section-divider-angled top-angled">
+            <span class="divider-text">Естеліктер</span>
+        </div>
+
+        <section id="memories" class="py-16 md:py-24 bg-black-cinematic px-4">
+            <div class="container mx-auto text-center max-w-5xl">
+                <h2 class="text-3xl md:text-5xl font-oswald text-red-action uppercase mb-12 drop-shadow-lg" data-aos="fade-in-up-aos">Естеліктер</h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-12 text-cream-elegant font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="100">
+                    Бірге өткізген әр сәт – біздің махаббатымыздың белестері. Осы фотоколлаж арқылы біздің ортақ естеліктерімізге үңіліңіз.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="relative w-full h-48 md:h-64 overflow-hidden border-2 border-deep-red-accent group" data-aos="zoom-in-aos" data-aos-delay="200">
+                        <img src="https://placehold.co/600x400/8B0000/FDF3E7?text=IDRIS+%26+NURAIYM%0AЕстелік+1" alt="Естелік суреті 1" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative w-full h-48 md:h-64 overflow-hidden border-2 border-deep-red-accent group" data-aos="zoom-in-aos" data-aos-delay="300">
+                        <img src="https://placehold.co/600x400/C8102E/FDF3E7?text=IDRIS+%26+NURAIYM%0AЕстелік+2" alt="Естелік суреті 2" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative w-full h-48 md:h-64 overflow-hidden border-2 border-deep-red-accent group" data-aos="zoom-in-aos" data-aos-delay="400">
+                        <img src="https://placehold.co/600x400/0A0A0A/C8102E?text=IDRIS+%26+NURAIYM%0AЕстелік+3" alt="Естелік суреті 3" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative w-full h-48 md:h-64 overflow-hidden border-2 border-deep-red-accent group" data-aos="zoom-in-aos" data-aos-delay="500">
+                        <img src="https://placehold.co/600x400/C8102E/0A0A0A?text=IDRIS+%26+NURAIYM%0AЕстелік+4" alt="Естелік суреті 4" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative w-full h-48 md:h-64 overflow-hidden border-2 border-deep-red-accent group" data-aos="zoom-in-aos" data-aos-delay="600">
+                        <img src="https://placehold.co/600x400/8B0000/FDF3E7?text=IDRIS+%26+NURAIYM%0AЕстелік+5" alt="Естелік суреті 5" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative w-full h-48 md:h-64 overflow-hidden border-2 border-deep-red-accent group" data-aos="zoom-in-aos" data-aos-delay="700">
+                        <img src="https://placehold.co/600x400/0A0A0A/C8102E?text=IDRIS+%26+NURAIYM%0AЕстелік+6" alt="Естелік суреті 6" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider-angled bottom-angled">
+            <span class="divider-text">Келуді растау</span>
+        </div>
+
+        <section id="rsvp" class="py-16 md:py-24 bg-black-cinematic px-4">
+            <div class="container mx-auto text-center max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-oswald text-deep-red-accent uppercase mb-8 drop-shadow-lg" data-aos="fade-in-up-aos">Келуді растау</h2>
+                <p class="text-lg md:text-xl leading-relaxed mb-8 text-cream-elegant font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="100">
+                    Сіздің келуіңіз – біз үшін үлкен қуаныш. Өтінеміз, келетініңізді растаңыз.
+                </p>
+
+                <form id="rsvp-form" class="bg-black-cinematic p-8 border-2 border-deep-red-accent">
+                    <div class="mb-6 text-left">
+                        <label for="fullName" class="block text-cream-elegant text-lg font-comfortaa uppercase mb-2">Толық аты-жөніңіз:</label>
+                        <input type="text" id="fullName" name="fullName" required
+                                class="w-full px-4 py-3 border-2 border-red-action focus:outline-none focus:ring-2 focus:ring-deep-red-accent focus:border-red-action text-lg font-comfortaa" placeholder="Аты-жөніңізді енгізіңіз">
+                    </div>
+
+                    <div class="mb-6 text-left">
+                        <label class="block text-cream-elegant text-lg font-comfortaa uppercase mb-2">Тойға келетініңізді растайсыз ба?</label>
+                        <div class="flex items-center mb-2">
+                            <input type="radio" id="attendYes" name="attendance" value="Иә, келемін" required
+                                    class="mr-3 text-deep-red-accent focus:ring-deep-red-accent">
+                            <label for="attendYes" class="text-cream-elegant text-lg font-comfortaa">Иә, келемін</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="attendNo" name="attendance" value="Жоқ, келе алмаймын"
+                                    class="mr-3 text-deep-red-accent focus:ring-deep-red-accent">
+                            <label for="attendNo" class="text-cream-elegant text-lg font-comfortaa">Жоқ, келе алмаймын</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 text-left" id="partner-section">
+                        <label class="block text-cream-elegant text-lg font-comfortaa uppercase mb-2">Кіммен келесіз?</label>
+                        <div class="flex items-center mb-2">
+                            <input type="radio" id="alone" name="partner" value="Өзім"
+                                    class="mr-3 text-deep-red-accent focus:ring-deep-red-accent">
+                            <label for="alone" class="text-cream-elegant text-lg font-comfortaa">Өзім</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="withPartner" name="partner" value="Жұбыммен"
+                                    class="mr-3 text-deep-red-accent focus:ring-deep-red-accent">
+                            <label for="withPartner" class="text-cream-elegant text-lg font-comfortaa">Жұбыммен</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-8 text-left">
+                        <label for="comment" class="block text-cream-elegant text-lg font-comfortaa uppercase mb-2">Қосымша түсініктеме (міндетті емес):</label>
+                        <textarea id="comment" name="comment" rows="4"
+                                    class="w-full px-4 py-3 border-2 border-red-action focus:outline-none focus:ring-2 focus:ring-deep-red-accent focus:border-red-action text-lg font-comfortaa" placeholder="Хабарламаңызды жазыңыз"></textarea>
+                    </div>
+
+                    <button type="button" id="generate-wish-button"
+                            class="rsvp-secondary-button mb-4">
+                        ✨ ТІЛЕК ЖАСАУ
+                    </button>
+
+                    <button type="submit"
+                            class="rsvp-main-button">
+                        ЖАУАПТЫ ЖІБЕРУ
+                    </button>
+                </form>
+
+                <p class="text-lg md:text-xl mt-8 text-cream-elegant font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="200">
+                    Жауаптар WhatsApp желісі арқылы қабылданады: <a href="https://wa.me/77478090181" target="_blank" class="text-deep-red-accent underline font-semibold hover:text-red-action transition duration-300">+7 747 809 0181</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider-angled top-angled">
+            <span class="divider-text">Аяқтау</span>
+        </div>
+
+        <footer class="bg-black-cinematic text-cream-elegant py-12 px-8 text-center text-sm relative z-20 border-t-2 border-deep-red-accent">
+            <div class="max-w-4xl mx-auto space-y-2">
+                <p class="font-oswald text-deep-red-accent uppercase tracking-widest text-base mb-4" data-aos="fade-in-up-aos">
+                    МАХАББАТ ХИКАЯСЫНЫҢ ФИЛЬМІ
+                </p>
+                <p class="font-comfortaa text-cream-elegant" data-aos="fade-in-up-aos" data-aos-delay="100">
+                    <span class="text-red-action font-bold">РЕЖИССЕРІ:</span> IDRIS & NURAIYM
+                </p>
+                <p class="font-comfortaa text-cream-elegant" data-aos="fade-in-up-aos" data-aos-delay="200">
+                    <span class="text-red-action font-bold">МУЗЫКАСЫ:</span> MIRAS ZHUGUNUSOV
+                </p>
+                <p class="font-comfortaa text-cream-elegant" data-aos="fade-in-up-aos" data-aos-delay="300">
+                    <span class="text-red-action font-bold">ПРОДЮСЕРІ:</span> МАХАББАТ
+                </p>
+                <p class="mt-8 text-xs text-deep-red-accent font-comfortaa" data-aos="fade-in-up-aos" data-aos-delay="400">
+                    © 2025 IDRIS & NURAIYM. БАРЛЫҚ ҚҰҚЫҚТАР ҚОРҒАЛҒАН.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <div id="wish-generator-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="close-wish-modal">&times;</button>
+            <h3 class="text-3xl font-oswald text-red-action uppercase mb-6 drop-shadow-md">ЕРЕКШЕ ТІЛЕК ЖАСАҢЫЗ</h3>
+            <div class="mb-4 text-left">
+                <label for="wish-keywords" class="block text-cream-elegant text-base font-comfortaa uppercase mb-2">Тілекке қатысты кілт сөздерді немесе тақырыпты енгізіңіз (мысалы: 'бақыт, ұзақ ғұмыр, берік отбасы'):</label>
+                <textarea id="wish-keywords" rows="3" class="w-full px-4 py-2 border-2 border-red-action focus:outline-none focus:ring-2 focus:ring-deep-red-accent focus:border-red-action text-base font-comfortaa" placeholder="Кілт сөздерді енгізіңіз"></textarea>
+            </div>
+            <button id="call-gemini-wish"
+                    class="bg-red-action text-cream-elegant px-6 py-2 hover:bg-deep-red-accent transition duration-300 text-base font-oswald uppercase tracking-wide transform hover:scale-105 mb-4">
+                ЖАСАУ
+            </button>
+            <div id="wish-output" class="bg-black-cinematic p-4 border-2 border-deep-red-accent min-h-[80px] flex items-center justify-center text-center text-cream-elegant text-base italic" style="max-height: 70vh; overflow-y: auto;">
+                Сіздің тілегіңіз осы жерде болады...
+            </div>
+            <button id="copy-wish-button" class="bg-deep-red-accent text-cream-elegant px-6 py-2 hover:bg-red-action transition duration-300 text-base font-oswald uppercase tracking-wide mt-4 hidden">
+                ТІЛЕКТІ КӨШІРУ
+            </button>
+        </div>
+    </div>
+
+    <div id="love-story-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="close-love-story-modal">&times;</button>
+            <h3 class="text-3xl font-oswald text-red-action uppercase mb-6 drop-shadow-md">IDRIS ПЕН NURAIYMНЫҢ МАХАББАТ ХИКАЯСЫН ЖАСАҢЫЗ</h3>
+            <div class="mb-4 text-left">
+                <label for="story-keywords" class="block text-cream-elegant text-base font-comfortaa uppercase mb-2">Олардың танысуының негізгі сәттерін, маңызды күндерін немесе ортақ қызығушылықтарын сипаттаңыз (мысалы: 'университетте танысты, мысықтарды жақсы көретін, Азияға саяхат'):</label>
+                <textarea id="story-keywords" rows="4" class="w-full px-4 py-2 border-2 border-red-action focus:outline-none focus:ring-2 focus:ring-deep-red-accent focus:border-red-action text-base font-comfortaa" placeholder="Кілт сөздерді енгізіңіз"></textarea>
+            </div>
+            <button id="call-gemini-story"
+                    class="bg-red-action text-cream-elegant px-6 py-2 hover:bg-deep-red-accent transition duration-300 text-base font-oswald uppercase tracking-wide transform hover:scale-105 mb-4">
+                ХИКАЯНЫ ЖАСАУ
+            </button>
+            <div id="story-output" class="bg-black-cinematic p-4 border-2 border-deep-red-accent min-h-[120px] flex items-center justify-center text-center text-cream-elegant text-base italic" style="max-height: 70vh; overflow-y: auto;">
+                Махаббат хикаясы осы жерде болады...
+            </div>
+            <button id="copy-story-button" class="bg-deep-red-accent text-cream-elegant px-6 py-2 hover:bg-red-action transition duration-300 text-base font-oswald uppercase tracking-wide mt-4 hidden">
+                ХИКАЯНЫ КӨШІРУ
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 1000,
+            once: true, /* Анимировать только один раз при прокрутке вниз */
+            offset: 50 /* Смещение (в px) от верхней части окна просмотра, когда элемент должен начать анимироваться */
+        });
+
+        // Резервный механизм для AOS, если он не инициализируется или слишком медленный
+        // Гарантирует, что элементы с data-aos станут видимыми после задержки, если не анимированы AOS
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelectorAll('[data-aos]').forEach(el => {
+                    // Проверяем, не добавил ли AOS свой класс 'aos-animate'
+                    if (!el.classList.contains('aos-animate')) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                        el.style.transition = 'none'; // Удаляем переход, чтобы предотвратить задержку появления
+                    }
+                });
+            }, 1500); // Даем AOS 1.5 секунды на выполнение своей работы
+
+            // GSAP SplitText для имен Idris & Nuraiym
+            // Wait for both names to be available in the DOM
+            const nameIdris = document.getElementById('name-idris');
+            const nameNuraiym = document.getElementById('name-nuraim');
+
+            if (nameIdris && nameNuraiym && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined') {
+                const coupleLogo = document.querySelector('.couple-logo');
+                
+                // Create a SplitText instance for each name and the ampersand
+                const idrisSplit = new SplitText(nameIdris, {type: "chars"});
+                const nuraiymSplit = new SplitText(nameNuraiym, {type: "chars"});
+                const ampersand = coupleLogo.querySelector('.ampersand');
+
+                gsap.set([idrisSplit.chars, nuraiymSplit.chars, ampersand], {autoAlpha: 0, y: "100%"});
+
+                const heroObserverGSAP = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate Idris characters
+                            gsap.to(idrisSplit.chars, {
+                                duration: 0.8,
+                                y: "0%",
+                                autoAlpha: 1,
+                                stagger: 0.05,
+                                ease: "power3.out",
+                                delay: 0.5
+                            });
+
+                            // Animate ampersand
+                            gsap.to(ampersand, {
+                                duration: 0.8,
+                                y: "0%",
+                                autoAlpha: 1,
+                                ease: "power3.out",
+                                delay: 0.8
+                            });
+
+                            // Animate Nuraiym characters
+                            gsap.to(nuraiymSplit.chars, {
+                                duration: 0.8,
+                                y: "0%",
+                                autoAlpha: 1,
+                                stagger: 0.05,
+                                ease: "power3.out",
+                                delay: 1.1
+                            });
+                            observer.disconnect(); // Stop observing after animation
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                heroObserverGSAP.observe(coupleLogo);
+            } else {
+                // Fallback if GSAP/SplitText isn't loaded or names not found
+                const coupleLogo = document.querySelector('.couple-logo');
+                if (coupleLogo) {
+                    const nameParts = coupleLogo.querySelectorAll('.name-part, .ampersand');
+                    nameParts.forEach(part => {
+                        part.style.opacity = '1';
+                        part.style.transform = 'translateY(0)';
+                    });
+                }
+            }
+        });
+
+
+        // Пользовательская функция оповещения (заменяет нативное alert)
+        function showCustomAlert(message) {
+            const customAlert = document.getElementById('custom-alert');
+            const alertMessage = document.getElementById('alert-message');
+            const alertClose = document.getElementById('alert-close');
+
+            alertMessage.textContent = message;
+            customAlert.classList.remove('hidden');
+
+            alertClose.onclick = () => customAlert.classList.add('hidden');
+        }
+
+        // --- Управление прокруткой body для модальных окон ---
+        function disableBodyScroll() {
+            document.body.classList.add('modal-open');
+        }
+
+        function enableBodyScroll() {
+            document.body.classList.remove('modal-open');
+        }
+
+        // Логика таймера обратного отсчета
+        const countdownDate = new Date("July 11, 2025 18:00:00").getTime();
+
+        const countdownElements = {
+            days: document.getElementById("days"),
+            hours: document.getElementById("hours"),
+            minutes: document.getElementById("minutes"),
+            seconds: document.getElementById("seconds")
+        };
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Обновление цифр с анимацией перелистывания
+            function updateDigit(element, newValue) {
+                const paddedValue = newValue.toString().padStart(2, '0');
+                // Анимируем только если значение действительно изменилось
+                if (element.textContent !== paddedValue) {
+                    element.classList.add('animate-flip');
+                    setTimeout(() => {
+                        element.textContent = paddedValue;
+                        element.classList.remove('animate-flip');
+                    }, 500); // Соответствует длительности анимации
+                }
+            }
+
+            // Обновляем каждую цифру. Порядок важен, если анимация создает визуальное перекрытие.
+            updateDigit(countdownElements.days, days);
+            updateDigit(countdownElements.hours, hours);
+            updateDigit(countdownElements.minutes, minutes);
+            updateDigit(countdownElements.seconds, seconds);
+
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "<p class='text-cream-elegant text-3xl md:text-5xl font-oswald uppercase'>ТОЙ ӨТТІ!</p>";
+            }
+        }, 1000);
+
+        // Логика воспроизведения/паузы музыки
+        const music = document.getElementById('background-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+        let isPlaying = false; // Музыка изначально не играет
+
+        // Добавляем обработчик ошибки для аудиоэлемента
+        music.addEventListener('error', function(e) {
+            console.error("Ошибка загрузки аудио:", e);
+            showCustomAlert('Музыкалық файлды жүктеу қатесі. Файлдың дұрыс орналасқанына көз жеткізіңіз.');
+        });
+
+        // Попытка автоматического воспроизведения при первом взаимодействии с документом
+        document.addEventListener('click', function attemptPlayMusic() {
+            if (!isPlaying) {
+                music.play().then(() => {
+                    isPlaying = true;
+                    musicIcon.classList.remove('fa-play');
+                    musicIcon.classList.add('fa-pause');
+                    document.removeEventListener('click', attemptPlayMusic); // Удаляем обработчик после успешного запуска
+                }).catch(e => {
+                    console.warn("Автовоспроизведение заблокировано или не удалось:", e);
+                    // showCustomAlert('Музыканы ойнату мүмкін болмады. Браузеріңіз автоматты ойнатуға рұқсат бермеуі мүмкін.');
+                    // Пользователь все еще может нажать на кнопку play/pause
+                });
+            }
+        }, { once: true }); // Добавляем { once: true }, чтобы обработчик сработал только один раз
+
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                music.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-play');
+            } else {
+                music.play().catch(e => {
+                    console.error("Воспроизведение музыки не удалось:", e);
+                    showCustomAlert('Музыканы ойнату мүмкін болмады. Браузеріңіз автоматты ойнатуға рұқсат бермеуі мүмкін.');
+                });
+                musicIcon.classList.remove('fa-play');
+                musicIcon.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Логика отправки формы RSVP
+        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked')?.value;
+            let partner = '';
+            const partnerRadios = document.querySelector('input[name="partner"]:checked');
+            if (partnerRadios) {
+                partner = partnerRadios.value;
+            }
+            const comment = document.getElementById('comment').value;
+
+            if (!attendance) {
+                showCustomAlert("Тойға келу туралы таңдауыңызды көрсетіңіз!");
+                return;
+            }
+
+            let message = `Сәлем!%0AМен ${fullName}.%0AТойға: ${attendance}.`;
+
+            if (attendance === "Иә, келемін") {
+                if (partner) {
+                    message += `%0AКіммен: ${partner}.`;
+                }
+            }
+
+            if (comment) {
+                message += `%0AТүсініктеме: ${comment}.`;
+            }
+
+            const whatsappNumber = '77478090181';
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+            window.open(whatsappLink, '_blank');
+
+            showCustomAlert('Жауабыңыз жіберілді! WhatsApp арқылы жіберу үшін жаңа терезеге өтіңіз.');
+            this.reset();
+        });
+
+        // Показать/скрыть секцию выбора спутника в зависимости от посещения
+        const attendYes = document.getElementById('attendYes');
+        const attendNo = document.getElementById('attendNo');
+        const partnerSection = document.getElementById('partner-section');
+
+        function togglePartnerSection() {
+            if (attendYes.checked) {
+                partnerSection.style.display = 'block';
+                // Убедимся, что радио-кнопки в этой секции также становятся обязательными
+                document.querySelectorAll('#partner-section input[type="radio"]').forEach(radio => radio.setAttribute('required', 'required'));
+            } else {
+                partnerSection.style.display = 'none';
+                // Снимаем обязательность, если секция скрыта
+                document.querySelectorAll('#partner-section input[type="radio"]').forEach(radio => radio.removeAttribute('required'));
+            }
+        }
+
+        attendYes.addEventListener('change', togglePartnerSection);
+        attendNo.addEventListener('change', togglePartnerSection);
+        togglePartnerSection(); // Вызов при загрузке страницы для установки начального состояния
+
+
+        // ✨ Логика Генератора пожеланий с Gemini API
+        const generateWishButton = document.getElementById('generate-wish-button');
+        const wishGeneratorModal = document.getElementById('wish-generator-modal');
+        const closeWishModalButton = document.getElementById('close-wish-modal');
+        const callGeminiWishButton = document.getElementById('call-gemini-wish');
+        const wishKeywordsInput = document.getElementById('wish-keywords');
+        const wishOutput = document.getElementById('wish-output');
+        const copyWishButton = document.getElementById('copy-wish-button');
+
+        generateWishButton.addEventListener('click', () => {
+            wishGeneratorModal.classList.remove('hidden');
+            wishGeneratorModal.classList.add('open');
+            disableBodyScroll(); // Запрещаем прокрутку body
+            wishKeywordsInput.value = '';
+            wishOutput.innerHTML = '<p class="text-cream-elegant italic">Сіздің тілегіңіз осы жерде болады...</p>'; // Казахский текст
+            copyWishButton.classList.add('hidden');
+        });
+
+        closeWishModalButton.addEventListener('click', () => {
+            wishGeneratorModal.classList.remove('open');
+            wishGeneratorModal.classList.add('hidden');
+            enableBodyScroll(); // Разрешаем прокрутку body
+        });
+
+        wishGeneratorModal.addEventListener('click', (e) => {
+            if (e.target === wishGeneratorModal) {
+                wishGeneratorModal.classList.remove('open');
+                wishGeneratorModal.classList.add('hidden');
+                enableBodyScroll(); // Разрешаем прокрутку body
+            }
+        });
+
+        callGeminiWishButton.addEventListener('click', async () => {
+            const keywords = wishKeywordsInput.value.trim();
+            const prompt = `Жаңа үйленгендерге арнап келесі кілт сөздерге негізделген қысқа, талғампаз және жылы үйлену тойына арналған тілек жазыңыз: "${keywords}". Егер кілт сөздер көрсетілмесе, жалпы, бірақ әдемі тілек жазыңыз. Тілек үйлену тойына арналған сайтқа сәйкес ресми стильде болуы керек. Жауап қазақ тілінде болуы керек.`;
+
+            wishOutput.innerHTML = '<div class="loader"></div><p class="text-deep-red-accent italic mt-2">Тілек жасалуда...</p>';
+            copyWishButton.classList.add('hidden');
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    wishOutput.innerHTML = `<p class="text-cream-elegant text-base">${text}</p>`;
+                    copyWishButton.classList.remove('hidden');
+                    wishOutput.setAttribute('data-generated-wish', text);
+                } else {
+                    wishOutput.innerHTML = '<p class="text-red-action">Тілек жасау мүмкін болмады. Қайталап көріңіз.</p>';
+                    console.error("Gemini API response structure unexpected:", result);
+                }
+            } catch (error) {
+                wishOutput.innerHTML = '<p class="text-red-action">API қосылуында қате. Кейінірек қайталап көріңіз.</p>';
+                console.error("Error calling Gemini API:", error);
+            }
+        });
+
+        copyWishButton.addEventListener('click', () => {
+            const wishToCopy = wishOutput.getAttribute('data-generated-wish');
+            if (wishToCopy) {
+                const textArea = document.createElement('textarea');
+                textArea.value = wishToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCustomAlert('Тілек алмасу буферіне көшірілді!');
+                } catch (err) {
+                    console.error('Тілекті көшіру мүмкін болмады: ', err);
+                    showCustomAlert('Тілекті көшіру мүмкін болмады.');
+                }
+                document.body.removeChild(textArea);
+            }
+        });
+
+        // ✨ Логика Генератора истории любви с Gemini API
+        // Изменен ID кнопки для открытия модального окна истории любви
+        const loveStoryGeneratorTrigger = document.getElementById('love-story-generator-trigger');
+        const loveStoryGeneratorTriggerCeremony = document.getElementById('love-story-generator-trigger-ceremony'); // Новая кнопка в секции церемонии
+        const loveStoryModal = document.getElementById('love-story-modal');
+        const closeLoveStoryModalBtn = document.getElementById('close-love-story-modal');
+        const callGeminiStoryBtn = document.getElementById('call-gemini-story');
+        const storyKeywordsInput = document.getElementById('story-keywords');
+        const storyOutput = document.getElementById('story-output');
+        const copyStoryButton = document.getElementById('copy-story-button');
+
+        // Обработчик для кнопки в секции "Махаббат хикаясы"
+        if (loveStoryGeneratorTrigger) {
+            loveStoryGeneratorTrigger.addEventListener('click', () => {
+                loveStoryModal.classList.remove('hidden');
+                loveStoryModal.classList.add('open');
+                disableBodyScroll(); // Запрещаем прокрутку body
+                storyKeywordsInput.value = '';
+                storyOutput.innerHTML = '<p class="text-cream-elegant italic">Махаббат хикаясы осы жерде болады...</p>';
+                copyStoryButton.classList.add('hidden');
+            });
+        }
+        // Обработчик для кнопки в секции "Той салтанаты"
+        if (loveStoryGeneratorTriggerCeremony) {
+            loveStoryGeneratorTriggerCeremony.addEventListener('click', () => {
+                loveStoryModal.classList.remove('hidden');
+                loveStoryModal.classList.add('open');
+                disableBodyScroll(); // Запрещаем прокрутку body
+                storyKeywordsInput.value = '';
+                storyOutput.innerHTML = '<p class="text-cream-elegant italic">Махаббат хикаясы осы жерде болады...</p>';
+                copyStoryButton.classList.add('hidden');
+            });
+        }
+
+        closeLoveStoryModalBtn.addEventListener('click', () => {
+            loveStoryModal.classList.remove('open');
+            loveStoryModal.classList.add('hidden');
+            enableBodyScroll(); // Разрешаем прокрутку body
+        });
+
+        loveStoryModal.addEventListener('click', (e) => {
+            if (e.target === loveStoryModal) {
+                loveStoryModal.classList.remove('open');
+                loveStoryModal.classList.add('hidden');
+                enableBodyScroll(); // Разрешаем прокрутку body
+            }
+        });
+
+        callGeminiStoryBtn.addEventListener('click', async () => {
+            const keywords = storyKeywordsInput.value.trim();
+            const coupleNames = "IDRIS пен NURAIYM"; // Имена на латинице для согласованности запроса
+            const prompt = `"${coupleNames}" жұбы үшін келесі кілт сөздерге негізделген қысқа, әдемі, эмоционалды және поэтиқалық махаббат хикаясын жазыңыз: "${keywords}". Егер кілт сөздер көрсетілмесе, олардың бірегейлігі мен терең байланысын көрсететін жалпы романтикалық хикая жасаңыз. Хикая үйлену тойына арналған сайтқа сәйкес ресми стильде болуы керек. Жауап қазақ тілінде болуы керек.`;
+
+            storyOutput.innerHTML = '<div class="loader"></div><p class="text-deep-red-accent italic mt-2">Хикая жасалуда...</p>';
+            copyStoryButton.classList.add('hidden');
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    storyOutput.innerHTML = `<p class="text-cream-elegant text-base">${text}</p>`;
+                    copyStoryButton.classList.remove('hidden');
+                    storyOutput.setAttribute('data-generated-story', text);
+                } else {
+                    storyOutput.innerHTML = '<p class="text-red-action">Хикаяны жасау мүмкін болмады. Қайталап көріңіз.</p>';
+                    console.error("Gemini API response structure unexpected:", result);
+                }
+            } catch (error) {
+                storyOutput.innerHTML = '<p class="text-red-action">API қосылуында қате. Кейінірек қайталап көріңіз.</p>';
+                console.error("Error calling Gemini API:", error);
+            }
+        });
+
+        copyStoryButton.addEventListener('click', () => {
+            const storyToCopy = storyOutput.getAttribute('data-generated-story');
+            if (storyToCopy) {
+                const textArea = document.createElement('textarea');
+                textArea.value = storyToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCustomAlert('Хикая алмасу буферіне көшірілді!');
+                } catch (err) {
+                    console.error('Хикаяны көшіру мүмкін болмады: ', err);
+                    showCustomAlert('Хикаяны көшіру мүмкін болмады.');
+                }
+                document.body.removeChild(textArea);
+            }
+        });
+    </script>
+</body>
+</html>
